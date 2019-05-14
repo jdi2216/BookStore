@@ -1,0 +1,15 @@
+﻿@model BookStore.Models.ShippingDetails
+
+@{
+    ViewBag.Title = "SportStore: Checkout";
+}
+@using (Html.BeginForm())
+{
+    <div>Номер телефона: @Html.EditorFor(x => x.Phone)</div>
+
+    <p align="center">
+        @Html.ActionLink("Отправить", "SendOrder", "Book", new { @class = "btn btn-success" })
+        <input class="actionButtons" type="submit" value="Отправить" />
+        <button type="button" class="btn btn-default active" onclick="location.href='@Url.Action("List", "Book")'">Отправить</button>
+    </p>
+}
